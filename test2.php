@@ -2,7 +2,6 @@
 
 $baseUrl = 'https://no1s.biz/';
 
-// $urlList = grep($baseUrl);
 $urlList = getTitle(crawling($baseUrl));
 
 ob_start(function($buf){ return mb_convert_encoding($buf, 'SJIS', 'UTF-8'); });
@@ -10,7 +9,6 @@ foreach($urlList as $title => $link) {
     echo $link . ' ' . $title;
     echo "\n";
 }
-// var_dump($urlList);exit;
 
 
 /*
